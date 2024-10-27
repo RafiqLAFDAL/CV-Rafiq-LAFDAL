@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Rafiq LAFDAL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f8fb;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            color: #4a4a4a;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 0 0 20px 0;
+        }
+
+        h2, h3 {
+            color: #2A6496;
+        }
+
+        a {
+            color: #1E559C;
+            text-decoration: none;
+        }
+
+        .header {
+            display: grid;
+            grid-template-columns: 1fr 150px;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .contact-info i {
+            color: #2A6496;
+            margin-right: 10px;
+        }
+
+        .skills, .experience, .education, .projects, .languages, .profil {
+            margin-top: 30px;
+            margin-bottom: 40px; /* Espace supplémentaire entre les sections */
+        }
+
+        .skills ul, .experience ul, .education ul, .projects ul, .languages ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills li, .experience li, .education li, .projects li, .languages li {
+            margin-bottom: 15px;
+        }
+
+        .download-btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .header img {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="cv-content">
+        <div class="header">
+            <div>
+                <h1>Rafiq LAFDAL</h1>
+                <h3>Administrateur Systèmes et Réseaux</h3>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h2>Contact</h2>
+            <p>📍 53 rue Charles Frérot, Gentilly</p>
+            <p>📞 +33 7 67 80 21 61</p>
+            <p><a href="mailto:rafiq.lafdal@gmail.com">📧 rafiq.lafdal@gmail.com</a></p>
+            <p>🔗<a href="https://www.linkedin.com/in/rafiq-lafdal-51b531b7">LinkedIn</a></p>
+        </div><br>
+
+        <div class="profil">
+            <h2>Profil</h2>
+            <p>Professionnel expérimenté en <strong>administration de systèmes et réseaux</strong>, avec une solide expertise dans l'installation, la gestion et la maintenance d'infrastructures réseau. Fort de plusieurs années d'expérience, notamment dans l'optimisation des systèmes d'information, la gestion des infrastructures IT et la formation des utilisateurs, je suis passionné par l'innovation dans le domaine des systèmes et réseaux.</p>
+        </div>
+
+        <div class="experience">
+            <h2>Expérience</h2>
+            <h3>Administrateur Systèmes et Réseaux</h3>
+            <p>IBSF - Chez LCL - Villejuif</p>
+            <p><em>Octobre 2023 - Présent</em></p>
+            <ul>
+                <li>Gestion et maintenance des systèmes et réseaux pour le site de LCL à Villejuif.</li>
+                <li>Supervision et administration des serveurs, réseaux, et équipements IT critiques.</li>
+                <li>Rédaction des <strong>procédures techniques</strong> et réalisation de <strong>modes opératoires</strong> pour divers projets avant leur mise en application.</li>
+                <li>Gestion et configuration d'<strong>Active Directory (AD)</strong> et du domaine réseau.</li>
+                <li>Contrôle et gestion des sauvegardes et restaurations avec <strong>Acronis</strong>.</li>
+                <li>Réalisation de maintenances préventives et correctives des infrastructures IT.</li>
+                <li>Envoi de rapports techniques et de suivi de maintenance aux équipes concernées.</li>
+                <li>Support technique et formation des utilisateurs internes.</li>
+                <li>Travail sur les systèmes de contrôle d'accès <strong>NEDAP</strong>, la lecture de plaques avec <strong>HESION</strong>, et les systèmes de vidéosurveillance <strong>NICE</strong>.</li>
+            </ul>
+
+            <h3>Ingénieur en Systèmes et Réseaux</h3>
+            <p>Cap Santé - Montreuil - Freelance</p>
+			 <p><em>Octobre 2023 - Présent</em></p>
+            <ul>
+                <li>Installation et maintenance de réseaux informatiques pour plus de 200 employés.</li>
+                <li>Gestion de projets réseaux (vidéoprotection, visioconférence) pour améliorer les réunions internes.</li>
+                <li>Formation des utilisateurs sur de nouveaux systèmes d'information.</li>
+            
+
+            <h3>Consultant en Systèmes et Réseaux</h3>
+            <p>Freelance - Paris</p>
+			 <p><em>Octobre 2023 - Présent</em></p>
+            <ul>
+                <li>Conseil et mise en place de solutions réseau pour divers clients.</li>
+                <li>Optimisation des infrastructures existantes pour une meilleure performance.</li>
+                <li>Rédaction de la documentation technique sur les systèmes et réseaux.</li> <br><br><h3>
+            
+
+            <h3><br><br>Développeur et Administrateur Réseaux</h3>
+            <p>Sietstal - Algérie</p>
+			 <p><em>Octobre 2023 - Présent</em></p>
+            <ul>
+                <li>Gestion des bases de données et des systèmes réseau de l'entreprise.</li>
+                <li>Développement d'applications et intégration réussie de nouvelles solutions logicielles.</li>
+            </ul>
+        </div>
+
+        <div class="education">
+            <h2>Formation</h2>
+            <p><strong>Développeur web</strong> - Philiance – Paris</p>
+            <p><strong>Master 2 Réseau et Système Distribué</strong> – Université de Béjaïa</p>
+            <p><strong>Licence Informatique</strong> – Université de Béjaïa</p>
+        </div>
+
+        <div class="skills">
+            <h2>Compétences</h2>
+            <ul>
+                <li>Administration Réseaux et Systèmes : Windows, Linux, MacOS, gestion de réseaux complexes.</li>
+                <li>Sécurité des Systèmes : Mise en place de politiques de sécurité pour protéger les infrastructures.</li>
+                <li>Base de Données : Gestion de bases de données SQL et NoSQL.</li>
+                <li>Langages de Programmation : Python, PHP, HTML, CSS.</li>
+                <li>Outils de Gestion de Projets : Trello, Jira.</li>
+            </ul>
+        </div>
+
+        <div class="projects">
+            <h2>Projets</h2>
+            <ul>
+                <li><strong>Automatisation des Sauvegardes :</strong> Mise en place d'un système automatisé de sauvegarde des données critiques.</li>
+                <li><strong>Développement d'une Application de Gestion des Congés :</strong> Application web pour gérer les demandes de congé au sein de l'entreprise.</li>
+                <li><strong>Amélioration du Réseau :</strong> Optimisation de l'infrastructure réseau pour réduire les temps d'arrêt et améliorer les performances.</li>
+            </ul>
+        </div>
+
+        <div class="languages">
+            <h2>Langues</h2>
+            <ul>
+                <li>Français : Courant</li>
+                <li>Anglais : Intermédiaire</li>
+                <li>Arabe : Langue maternelle</li>
+            </ul>
+        </div>
+
+        <div class="download-btn-container">
+            <button class="download-btn" onclick="generatePDF()">Télécharger mon CV en PDF</button>
+        </div>
+    </div>
+
+    <script>
+        async function generatePDF() {
+            const { jsPDF } = window.jspdf;
+
+            const doc = new jsPDF();
+            const element = document.getElementById('cv-content');
+
+            await html2canvas(element, { scale: 2 }).then((canvas) => {
+                const imgData = canvas.toDataURL('image/png');
+                const imgWidth = 190;
+                const pageHeight = doc.internal.pageSize.height;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                let heightLeft = imgHeight;
+
+                let position = 0;
+
+                doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    doc.addPage();
+                    doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+            });
+
+            doc.save('CV_Rafiq_LAFDAL.pdf');
+        }
+    </script>
+</body>
+</html>
