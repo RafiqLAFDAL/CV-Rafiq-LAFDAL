@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -313,25 +312,72 @@
 
   <!-- PDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script>
-    async function generatePDFOnePage(){
-      const { jsPDF } = window.jspdf;
-      const cv = document.getElementById('cv');
-      if(document.fonts && document.fonts.ready){await document.fonts.ready;}
-      window.scrollTo({top:0});
-      const canvas = await html2canvas(cv,{scale:2.2,useCORS:true,backgroundColor:'#ffffff'});
-      const imgData = canvas.toDataURL('image/jpeg',0.92);
-      const pdf = new jsPDF('p','mm','a4');
-      const pdfW = pdf.internal.pageSize.getWidth();
-      const pdfH = pdf.internal.pageSize.getHeight();
-      let ratio = pdfW/canvas.width;
-      if(canvas.height*ratio>pdfH){ratio = pdfH/canvas.height;}
-      const imgH = canvas.height*ratio;
-      pdf.addImage(imgData,'JPEG',0,(pdfH-imgH)/2,pdfW,imgH,undefined,'FAST');
-      pdf.save('CV_Rafiq_LAFDAL.pdf');
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  async function generatePDFOnePage(){
+    const { jsPDF } = window.jspdf;
+    const src = document.getElementById('cv');
+
+    // Attendre les polices
+    if (document.fonts && document.fonts.ready){ await document.fonts.ready; }
+
+    // === 1) Cloner le CV hors écran à une largeur "desktop" fixe ===
+    const TARGET_WIDTH = 1120; // cohérent avec ton layout desktop
+    const clone = src.cloneNode(true);
+    clone.id = 'cv-print';
+    clone.style.position = 'fixed';
+    clone.style.left = '-99999px'; // hors écran
+    clone.style.top = '0';
+    clone.style.width = TARGET_WIDTH + 'px';
+    clone.style.maxWidth = 'none';
+    clone.style.boxShadow = 'none'; // pas d'ombre dans le PDF
+    document.body.appendChild(clone);
+
+    // Dimensions du clone
+    const w = clone.scrollWidth;
+    const h = clone.scrollHeight;
+
+    // === 2) Choisir une échelle qui ne dépasse pas les limites mobiles ===
+    // Limite conservatrice (beaucoup d'appareils coupent au-delà d'~8192 px)
+    const MAX_DIM = 8192; 
+    let scale = 2; // qualité correcte par défaut
+    const biggest = Math.max(w, h) * scale;
+    if (biggest > MAX_DIM){
+      scale = Math.max(1, Math.floor((MAX_DIM / Math.max(w, h)) * 100) / 100);
     }
-    document.getElementById('downloadBtn').addEventListener('click',generatePDFOnePage);
-  </script>
+
+    // === 3) Rasteriser avec html2canvas sur fond blanc ===
+    const canvas = await html2canvas(clone, {
+      scale,
+      useCORS: true,
+      backgroundColor: '#ffffff',
+      scrollX: 0,
+      scrollY: 0,
+      windowWidth: TARGET_WIDTH
+    });
+
+    // Nettoyer le clone
+    document.body.removeChild(clone);
+
+    // === 4) Composer une page A4 dans jsPDF ===
+    const imgData = canvas.toDataURL('image/jpeg', 0.95);
+    const pdf = new jsPDF('p','mm','a4');
+    const pdfW = pdf.internal.pageSize.getWidth();
+    const pdfH = pdf.internal.pageSize.getHeight();
+
+    // Adapter au mieux sans déformer
+    const ratio = Math.min(pdfW / canvas.width, pdfH / canvas.height);
+    const imgW = canvas.width * ratio;
+    const imgH = canvas.height * ratio;
+    const x = (pdfW - imgW) / 2;
+    const y = (pdfH - imgH) / 2;
+
+    pdf.addImage(imgData, 'JPEG', x, y, imgW, imgH, undefined, 'FAST');
+    pdf.save('CV_Rafiq_LAFDAL.pdf');
+  }
+
+  document.getElementById('downloadBtn').addEventListener('click', generatePDFOnePage);
+</script>
+
 </body>
 </html>
