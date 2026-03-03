@@ -1,0 +1,554 @@
+cat /mnt/user-data/outputs/CV_Rafiq_LAFDAL_FINAL_LCL.html
+Sortie
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CV – Rafiq LAFDAL – Data Analyst</title>
+
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+  :root{
+    --ink:#111827;
+    --muted:#4b5563;
+    --line:#e5e7eb;
+    --dot:#9ca3af;
+    --header-bg:#f7f7f7;
+    --page-w:1120px;
+    --res-w:220px;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:#f5f5f5; color:var(--ink);
+    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    line-height:1.45; -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:var(--page-w); margin:28px auto 96px; padding:0 16px}
+  .card{
+    background:#fff; border-radius:10px; overflow:hidden;
+    box-shadow:0 12px 32px rgba(0,0,0,.08);
+  }
+
+  /* ===== HEADER ===== */
+  .header{
+    display:grid; grid-template-columns: 220px 1fr 360px;
+    gap:16px; align-items:center;
+    background:var(--header-bg);
+    padding:18px;
+    border-bottom:1px dotted var(--dot);
+  }
+  .h-left{display:grid; place-items:center}
+  .avatar{
+    width:110px; height:110px; border-radius:50%; object-fit:cover;
+    border:3px solid #fff; box-shadow:0 8px 20px rgba(0,0,0,.12);
+    background:#fff;
+  }
+  .h-mid{padding:0 4px}
+  .name{margin:0 0 6px; font-size:1.55rem; font-weight:800; letter-spacing:.2px}
+  .tagline{margin:0; color:#1f2937; font-weight:600; max-width:70ch}
+  .h-right{
+    justify-self:end;
+    display:flex; flex-direction:column; gap:6px;
+    font-weight:600;
+  }
+  .h-right .row{display:flex; align-items:center; gap:10px}
+  .h-right a{color:var(--ink); text-decoration:none}
+  .h-right i{width:16px}
+
+  /* ===== MAIN ===== */
+  .main{padding:12px 18px 26px}
+  h2.section{
+    font-size:1.05rem; font-weight:800; letter-spacing:.06em;
+    text-transform:uppercase; margin:6px 0 8px;
+  }
+
+  .rule-band{
+    margin:14px 0 18px;
+    height:20px;
+    background:var(--header-bg);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+
+  .block{padding:10px 0; border-top:0}
+  .job{margin:8px 0 10px}
+  .job h3{margin:0; font-size:1rem}
+  .meta{color:var(--muted); font-weight:600; font-size:.95rem}
+
+  ul.items{margin:6px 0 0; padding-left:18px}
+  ul.items li{margin:5px 0; line-height:1.32; hyphens:auto}
+  ul.items li::marker{color:#111827}
+
+  .with-result > .li-grid{
+    display:grid;
+    grid-template-columns: 1fr var(--res-w);
+    gap:10px; align-items:start;
+  }
+  .li-text{min-width:0}
+  .li-res{justify-self:end}
+
+  .result-pill{
+    display:block;
+    border:1px dashed #cbd5e1;
+    background:#fff;
+    border-radius:10px;
+    padding:8px 10px;
+    min-width:var(--res-w);
+    max-width:var(--res-w);
+  }
+  .result-pill .value{font-weight:800; font-size:1rem}
+  .result-pill .label{color:var(--muted); font-weight:600; font-size:.84rem; line-height:1.2}
+
+  /* ===== CHIPS ===== */
+  .chip{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:2px 8px; border-radius:999px;
+    font-size:.78rem; font-weight:800; letter-spacing:.02em;
+    border:1px solid #e5e7eb; margin-right:8px; white-space:nowrap;
+  }
+  .chip i{font-size:.8rem; opacity:.85}
+  .chip--data{         background:#dbeafe; color:#1e40af; }
+  .chip--sql{          background:#f0fdf4; color:#166534; }
+  .chip--excel{        background:#dcfce7; color:#15803d; }
+  .chip--auto{         background:#fef3c7; color:#92400e; }
+  .chip--report{       background:#f5f3ff; color:#6d28d9; }
+  .chip--kpi{          background:#ffe4e6; color:#be123c; }
+  .chip--projet{       background:#e0f2fe; color:#075985; }
+  .chip--admin{        background:#eef2ff; color:#3730a3; }
+  .chip--secu{         background:#fee2e2; color:#991b1b; }
+  .chip--superv{       background:#ecfeff; color:#155e75; }
+  .chip--virt{         background:#f0fdf4; color:#166534; }
+  .chip--docs{         background:#fff7ed; color:#9a3412; }
+  .chip--reseau{       background:#eff6ff; color:#1d4ed8; }
+  .chip--support{      background:#e7f5ff; color:#0c4a6e; }
+
+  /* ===== COMPÉTENCES (5 colonnes) ===== */
+  h4.small{margin:10px 0 6px; font-size:.95rem; font-weight:700; color:#111827}
+  .skills-row{
+    display:grid;
+    grid-template-columns:repeat(5, minmax(0,1fr));
+    gap:22px; align-items:start; font-size:.97rem;
+  }
+  .skills-row h4{margin:0 0 6px; font-size:.95rem; font-weight:800}
+  .skills-row ul{margin:0; padding-left:18px}
+  .skills-row li{margin:2px 0; line-height:1.3}
+
+  /* ===== ACTIONS ===== */
+  .actions{position:fixed; bottom:18px; right:24px; z-index:10}
+  .btn{
+    display:inline-flex; align-items:center; gap:.6rem;
+    background:#111827; color:#fff; border:none; border-radius:10px;
+    padding:10px 14px; font-weight:700; cursor:pointer;
+    box-shadow:0 8px 24px rgba(0,0,0,.08)
+  }
+
+  /* ===== PRINT ===== */
+  @media print{
+    @page{size:A4; margin:10mm}
+    body{background:#fff}
+    .page{margin:0; padding:0}
+    .card{box-shadow:none}
+    .header{grid-template-columns:200px 1fr 300px; padding:12px}
+    .name{font-size:1.3rem}
+    .tagline{font-size:.95rem}
+    .skills-row{ gap:12px; font-size:.92rem }
+    .rule-band{ height:12px }
+    :root{ --res-w:190px; }
+    .actions{display:none}
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width:950px){
+    .header{grid-template-columns:1fr; text-align:center}
+    .h-right{justify-self:center}
+    .with-result > .li-grid{ grid-template-columns: 1fr; }
+    .result-pill{ min-width:100%; max-width:100%; }
+  }
+  @media (max-width:1100px){
+    .skills-row{ grid-template-columns:repeat(3, minmax(0,1fr)) }
+  }
+  @media (max-width:780px){
+    .skills-row{ grid-template-columns:repeat(2, minmax(0,1fr)) }
+  }
+
+  /* ===== MODE COMPACT ===== */
+  body.compact{ font-size:15px; }
+  body.compact .card{ border-radius:8px; }
+  body.compact .main{ padding:10px 14px 18px; }
+  body.compact .header{ grid-template-columns:180px 1fr 320px; padding:12px; }
+  body.compact .avatar{ width:96px; height:96px; }
+  body.compact .name{ font-size:1.35rem; margin-bottom:4px; }
+  body.compact .tagline{ font-size:.92rem; }
+  body.compact h2.section{ margin:4px 0 6px; font-size:.98rem; letter-spacing:.05em; }
+  body.compact .rule-band{ height:12px; margin:10px 0 12px; }
+  body.compact ul.items{ margin:2px 0 0; padding-left:16px; }
+  body.compact ul.items li{ margin:2px 0; line-height:1.25; }
+  @media print{
+    body.compact .rule-band{ height:10px; margin:8px 0 10px; }
+  }
+</style>
+</head>
+<body class="compact">
+  <div class="page">
+    <div class="actions">
+      <button class="btn" id="downloadBtn"><i class="fa-solid fa-file-arrow-down"></i>Télécharger en PDF</button>
+    </div>
+
+    <div class="card" id="cv">
+      <!-- ===== HEADER ===== -->
+      <div class="header">
+        <div class="h-left">
+          <!-- ========================================== -->
+          <!-- 📸 METTEZ VOTRE IMAGE BASE64 ICI 👇       -->
+          <!-- ========================================== -->
+          <!-- Remplacez "VOTRE_IMAGE_BASE64_ICI" par votre code base64 complet -->
+          <!-- Exemple: data:image/jpeg;base64,/9j/4AAQSkZJRg... -->
+          
+          <img src="VOTRE_IMAGE_BASE64_ICI" alt="Photo Rafiq LAFDAL" class="avatar">
+          
+          <!-- ========================================== -->
+          <!-- 📸 FIN DE LA ZONE IMAGE                   -->
+          <!-- ========================================== -->
+        </div>
+        <div class="h-mid">
+          <h1 class="name">RAFIQ LAFDAL</h1>
+          <p class="tagline">
+            Data Analyst & Administrateur Systèmes · 6+ ans d'expérience en analyse de données, pilotage commercial et automatisation · Excel avancé, VBA, SQL, Python, SAS · Spécialisé dans les KPIs, tableaux de bord et reporting métier.
+          </p>
+        </div>
+        <div class="h-right">
+          <div class="row"><i class="fa-solid fa-phone"></i><a href="tel:+33767802161">+33 7 67 80 21 61</a></div>
+          <div class="row"><i class="fa-solid fa-envelope"></i><a href="mailto:rafiq.lafdal@gmail.com">rafiq.lafdal@gmail.com</a></div>
+          <div class="row"><i class="fa-brands fa-linkedin"></i><a target="_blank" href="https://www.linkedin.com/in/rafiq-lafdal-51b531b7">linkedin.com/in/rafiq-lafdal</a></div>
+          <div class="row"><i class="fa-solid fa-location-dot"></i>Gentilly (94)</div>
+          <div class="row"><i class="fa-solid fa-id-card"></i>Permis B & D</div>
+        </div>
+      </div>
+
+      <!-- ===== MAIN ===== -->
+      <main class="main">
+        <h2 class="section">EXPÉRIENCES PROFESSIONNELLES</h2>
+        <div class="rule-band" role="separator" aria-hidden="true"></div>
+
+        <!-- IBSF -->
+        <article class="block job">
+          <h3><strong>IBSF – LCL Villejuif</strong> · Administrateur systèmes & Data Analyst</h3>
+          <div class="meta">Octobre 2023 – Présent</div>
+
+          <ul class="items">
+            <li class="with-result">
+              <div class="li-grid">
+                <div class="li-text">
+                  <span class="chip chip--kpi"><i class="fa-solid fa-chart-line"></i>KPIs & Pilotage</span>
+                  Conception et mise en œuvre de tableaux de bord de pilotage (disponibilité, incidents, performance réseau) avec définition des indicateurs clés et automatisation complète des suivis via Excel VBA et Python.
+                </div>
+                <div class="li-res">
+                  <span class="result-pill"><div class="value">15 KPIs</div><div class="label">Indicateurs automatisés</div></span>
+                </div>
+              </div>
+            </li>
+
+            <li class="with-result">
+              <div class="li-grid">
+                <div class="li-text">
+                  <span class="chip chip--data"><i class="fa-solid fa-database"></i>Données</span>
+                  Requêtage et exploitation de données issues de logs systèmes, outils de supervision (PRTG, Graylog, ELK) ; extraction, transformation et analyse pour produire des reportings opérationnels à destination des managers.
+                </div>
+                <div class="li-res">
+                  <span class="result-pill"><div class="value">−60&nbsp;%</div><div class="label">Temps de reporting manuel</div></span>
+                </div>
+              </div>
+            </li>
+
+            <li class="with-result">
+              <div class="li-grid">
+                <div class="li-text">
+                  <span class="chip chip--auto"><i class="fa-solid fa-wand-magic-sparkles"></i>Automatisation</span>
+                  Développement de macros VBA et scripts Python pour l'automatisation des imports CSV/Excel, consolidation de données multi-sources et génération de rapports hebdomadaires/mensuels avec graphiques dynamiques.
+                </div>
+                <div class="li-res">
+                  <span class="result-pill"><div class="value">20+ heures</div><div class="label">Économisées par mois</div></span>
+                </div>
+              </div>
+            </li>
+
+            <li class="with-result">
+              <div class="li-grid">
+                <div class="li-text">
+                  <span class="chip chip--excel"><i class="fa-solid fa-file-excel"></i>Excel avancé</span>
+                  Maîtrise approfondie d'Excel : tableaux croisés dynamiques, formules complexes (INDEX/MATCH, INDIRECT, SOMMEPROD), graphiques avancés, Power Query pour connexion à des bases de données et nettoyage de données.
+                </div>
+                <div class="li-res">
+                  <span class="result-pill"><div class="value">+50&nbsp;%</div><div class="label">Fiabilité des données</div></span>
+                </div>
+              </div>
+            </li>
+
+            <li class="with-result">
+              <div class="li-grid">
+                <div class="li-text">
+                  <span class="chip chip--report"><i class="fa-solid fa-presentation"></i>Reporting</span>
+                  Production de reporting hebdomadaire et mensuel à destination de la direction : indicateurs de performance, analyse de tendances, recommandations ; communication des résultats via PowerPoint et réunions de pilotage.
+                </div>
+                <div class="li-res">
+                  <span class="result-pill"><div class="value">99,95&nbsp;%</div><div class="label">SLA respecté</div></span>
+                </div>
+              </div>
+            </li>
+
+            <li><span class="chip chip--admin"><i class="fa-solid fa-server"></i>Admin Systèmes</span>Administration serveurs Windows/Linux, AD/DNS/DHCP, réseau Wi-Fi ; MCO, patching, PRA/PCA avec tests réguliers et haute disponibilité.</li>
+            <li><span class="chip chip--secu"><i class="fa-solid fa-shield-halved"></i>Sécurité</span>Gestion identités/accès AD/GPO ; patch management WSUS & Linux ; politiques de mots de passe ; conformité sécurité (+30%).</li>
+            <li><span class="chip chip--superv"><i class="fa-solid fa-waveform"></i>Supervision</span>Monitoring PRTG, Wireshark ; sauvegardes Acronis avec tests RTO/RPO ; réduction des incidents critiques (−45%).</li>
+          </ul>
+        </article>
+
+        <!-- Cap Santé -->
+        <article class="block job">
+          <h3><strong>Cap Santé – Montreuil (Freelance)</strong> · Ingénieur systèmes, réseaux & Data</h3>
+          <div class="meta">Janvier 2021 – Juillet 2023</div>
+
+          <ul class="items">
+            <li class="with-result">
+              <div class="li-grid">
+                <div class="li-text">
+                  <span class="chip chip--projet"><i class="fa-solid fa-sitemap"></i>Gestion de projet</span>
+                  Pilotage de projets IT (réseau, VPN, sauvegardes) : identification des besoins métier, rédaction d'expressions de besoins, coordination avec prestataires, suivi de réalisation et communication auprès des parties prenantes.
+                </div>
+                <div class="li-res">
+                  <span class="result-pill"><div class="value">5 projets</div><div class="label">Menés à terme</div></span>
+                </div>
+              </div>
+            </li>
+
+            <li class="with-result">
+              <div class="li-grid">
+                <div class="li-text">
+                  <span class="chip chip--data"><i class="fa-solid fa-chart-simple"></i>Analyse</span>
+                  Analyse de performance réseau (LAN/WAN, VPN) avec collecte de métriques, identification de goulots d'étranglement et recommandations d'optimisation ; suivi mensuel des KPIs de disponibilité et de débit.
+                </div>
+                <div class="li-res">
+                  <span class="result-pill"><div class="value">+40&nbsp;%</div><div class="label">Performance VPN</div></span>
+                </div>
+              </div>
+            </li>
+
+            <li class="with-result">
+              <div class="li-grid">
+                <div class="li-text">
+                  <span class="chip chip--support"><i class="fa-solid fa-user-graduate"></i>Support & Formation</span>
+                  Accompagnement et formation des utilisateurs (>70 employés) ; création de documentations et guides utilisateurs ; réduction des incidents par sensibilisation et montée en compétence.
+                </div>
+                <div class="li-res">
+                  <span class="result-pill"><div class="value">−25&nbsp;%</div><div class="label">Incidents utilisateurs</div></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <!-- DCFC -->
+        <article class="block job">
+          <h3><strong>DCFC (Freelance)</strong> · Consultant IT & Analyse de données</h3>
+          <div class="meta">Juillet 2018 – Décembre 2020</div>
+
+          <ul class="items">
+            <li class="with-result">
+              <div class="li-grid">
+                <div class="li-text">
+                  <span class="chip chip--sql"><i class="fa-solid fa-code"></i>Requêtage</span>
+                  Requêtage de bases de données (SQL) pour extraction de données métier, création de vues et requêtes paramétrées ; consolidation multi-sources pour analyse et reporting.
+                </div>
+                <div class="li-res">
+                  <span class="result-pill"><div class="value">50+ requêtes</div><div class="label">Créées et optimisées</div></span>
+                </div>
+              </div>
+            </li>
+
+            <li class="with-result">
+              <div class="li-grid">
+                <div class="li-text">
+                  <span class="chip chip--projet"><i class="fa-solid fa-magnifying-glass-chart"></i>Audit & Analyse</span>
+                  Audit complet de l'infrastructure IT (réseau, sauvegardes, sécurité) avec cartographie, collecte de données, analyse quantitative et qualitative ; production d'un plan d'actions priorisé avec ROI estimé.
+                </div>
+                <div class="li-res">
+                  <span class="result-pill"><div class="value">+20&nbsp;%</div><div class="label">Disponibilité réseau</div></span>
+                </div>
+              </div>
+            </li>
+
+            <li class="with-result">
+              <div class="li-grid">
+                <div class="li-text">
+                  <span class="chip chip--docs"><i class="fa-solid fa-book"></i>Documentation</span>
+                  Rédaction de procédures détaillées, guides utilisateurs et documentation technique ; création de bases de connaissances pour autonomisation des équipes.
+                </div>
+                <div class="li-res">
+                  <span class="result-pill"><div class="value">+50&nbsp;%</div><div class="label">Adoption procédures</div></span>
+                </div>
+              </div>
+            </li>
+
+            <li><span class="chip chip--data"><i class="fa-solid fa-mobile-screen-button"></i>Application métier</span>Conception et recette d'une application de suivi de chantiers : définition des besoins, modélisation des données, tests et formation utilisateurs.</li>
+          </ul>
+        </article>
+
+        <h2 class="section">PROJETS DATA & AUTOMATISATION</h2>
+        <div class="rule-band" role="separator" aria-hidden="true"></div>
+        <div class="block">
+          <ul class="items">
+            <li><span class="chip chip--excel"><i class="fa-solid fa-table"></i>Dashboard WiFi</span>Tableau de bord Excel VBA pour analyse logs WiFi (2800+ lignes/jour) : import automatisé, détection format, calcul KPIs (connexions/jour, pics horaires), graphiques dynamiques → économie 15h/mois.</li>
+            <li><span class="chip chip--auto"><i class="fa-solid fa-robot"></i>Reporting automatisé</span>Scripts Python pour consolidation hebdomadaire de rapports multi-sources (CSV, Excel, logs) avec nettoyage de données, calculs statistiques et génération PowerPoint → fiabilité +60%.</li>
+            <li><span class="chip chip--sql"><i class="fa-solid fa-database"></i>Requêtes SQL</span>Bibliothèque de 50+ requêtes SQL optimisées pour extraction/agrégation de données opérationnelles ; vues paramétrées pour reporting mensuel direction.</li>
+            <li><span class="chip chip--kpi"><i class="fa-solid fa-gauge-high"></i>Indicateurs NAC</span>Mise en place de KPIs de conformité réseau (NAC 802.1X) : taux de conformité par service, évolution temporelle, alertes automatiques → conformité ≥95% atteinte.</li>
+          </ul>
+        </div>
+
+        <h2 class="section">FORMATION</h2>
+        <div class="rule-band" role="separator" aria-hidden="true"></div>
+        <div class="block">
+          <ul class="items">
+            <li><strong>SAS Programming (en cours)</strong> — Formation en ligne SAS Institute · SAS Base, langage macro, manipulation de données (Mars 2026 – en cours)</li>
+            <li><strong>Développeur web</strong> — Philiance, Paris · Formation intensive Python, JavaScript, bases de données SQL (Juil. 2023 – Oct. 2023)</li>
+            <li><strong>Master 2 Big Data & Bases de données</strong> — ESEM Paris · SQL avancé, data mining, entrepôts de données, SAS (2017 – 2018)</li>
+            <li><strong>Master 2 Réseaux & Systèmes Distribués</strong> — Université de Béjaïa (2014 – 2015)</li>
+            <li><strong>Master 1 Réseaux & Systèmes Distribués</strong> — Université de Béjaïa (2013 – 2014)</li>
+            <li><strong>Licence professionnelle Informatique & Réseaux</strong> — Université de Béjaïa (2012 – 2013)</li>
+          </ul>
+        </div>
+
+        <!-- ===== COMPÉTENCES ===== -->
+        <h2 class="section">COMPÉTENCES TECHNIQUES</h2>
+        <div class="rule-band" role="separator" aria-hidden="true"></div>
+        <div class="block">
+          <div class="skills-row">
+            <div>
+              <h4 class="small">Data & Analyse</h4>
+              <ul class="items">
+                <li>SQL (MySQL, PostgreSQL, requêtage avancé)</li>
+                <li>SAS Base & langage macro (en formation)</li>
+                <li>Excel avancé (TCD, Power Query)</li>
+                <li>Python (Pandas, NumPy) — équivalent SAS</li>
+                <li>Extraction & nettoyage données</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="small">Automatisation</h4>
+              <ul class="items">
+                <li>VBA (macros Excel)</li>
+                <li>Python (scripts ETL)</li>
+                <li>PowerShell</li>
+                <li>Bash scripting</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="small">Reporting & Pilotage</h4>
+              <ul class="items">
+                <li>Tableaux de bord</li>
+                <li>KPIs métier</li>
+                <li>PowerPoint</li>
+                <li>Visualisation données</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="small">Outils & supervision</h4>
+              <ul class="items">
+                <li>PRTG, Zabbix, Nagios</li>
+                <li>Graylog, ELK, Splunk</li>
+                <li>Git (versioning)</li>
+                <li>Pack Office (expert)</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="small">Systèmes & IT</h4>
+              <ul class="items">
+                <li>Windows Server / Linux</li>
+                <li>AD, GPO, WSUS</li>
+                <li>Réseaux LAN/WAN</li>
+                <li>VMware, Hyper-V</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="section">LANGUES</h2>
+        <div class="rule-band" role="separator" aria-hidden="true"></div>
+        <div class="block">
+          <ul class="items">
+            <li><strong>Français</strong> : Courant (C1)</li>
+            <li><strong>Anglais</strong> : Intermédiaire (B2) – lecture documentation technique</li>
+            <li><strong>Arabe</strong> : Langue maternelle</li>
+          </ul>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    async function generatePDFOnePage(){
+      const { jsPDF } = window.jspdf;
+      const src = document.getElementById('cv');
+
+      if (document.fonts && document.fonts.ready){ await document.fonts.ready; }
+
+      const TARGET_WIDTH = 1120;
+      const clone = src.cloneNode(true);
+      clone.id = 'cv-print';
+      clone.style.position = 'fixed';
+      clone.style.left = '-99999px';
+      clone.style.top = '0';
+      clone.style.width = TARGET_WIDTH + 'px';
+      clone.style.maxWidth = 'none';
+      clone.style.boxShadow = 'none';
+      document.body.appendChild(clone);
+
+      const w = clone.scrollWidth;
+      const h = clone.scrollHeight;
+
+      const MAX_DIM = 8192;
+      let scale = 2;
+      const biggest = Math.max(w, h) * scale;
+      if (biggest > MAX_DIM){
+        scale = Math.max(1, Math.floor((MAX_DIM / Math.max(w, h)) * 100) / 100);
+      }
+
+      const canvas = await html2canvas(clone, {
+        scale,
+        useCORS: true,
+        backgroundColor: '#ffffff',
+        scrollX: 0,
+        scrollY: 0,
+        windowWidth: TARGET_WIDTH
+      });
+
+      document.body.removeChild(clone);
+
+      const imgData = canvas.toDataURL('image/jpeg', 0.95);
+      const pdf = new jsPDF('p','mm','a4');
+      const pdfW = pdf.internal.pageSize.getWidth();
+      const pdfH = pdf.internal.pageSize.getHeight();
+
+      const ratio = Math.min(pdfW / canvas.width, pdfH / canvas.height);
+      const imgW = canvas.width * ratio;
+      const imgH = canvas.height * ratio;
+      const x = (pdfW - imgW) / 2;
+      const y = (pdfH - imgH) / 2;
+
+      pdf.addImage(imgData, 'JPEG', x, y, imgW, imgH, undefined, 'FAST');
+      pdf.save('CV_Rafiq_LAFDAL_DataAnalyst_LCL.pdf');
+    }
+    document.getElementById('downloadBtn').addEventListener('click',generatePDFOnePage);
+  </script>
+</body>
+</html>
